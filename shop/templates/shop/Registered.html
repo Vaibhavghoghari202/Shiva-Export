@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://static.vecteezy.com/system/resources/previews/008/526/538/non_2x/container-cargo-for-import-export-business-logistic-3d-rendering-photo.jpg') 
+                        no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .registration-form {
+            background: rgb(161 161 161 / 90%); /* Transparent white background */
+            padding: 30px;
+            border-radius: 10px;
+            {% comment %} box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); {% endcomment %}
+            max-width: 700px;
+            margin: auto;
+        } 
+        .registration-form:hover {
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+            transform: scale(1.02); /* Slight scale-up effect */
+        }
+        .form-header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+        .form-control {
+            height: 45px;
+            border-radius: 5px;
+            transition: box-shadow 0.3s ease; /* Smooth hover effect */
+        }
+        .form-control:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+            border-color: #007bff;
+        }
+        .btn-register {
+            background-color: #f77f00;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+        }
+        .btn-register:hover {
+            background-color: #d97700;
+            transform: scale(1.05); /* Slight scaling effect on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <form class="registration-form" action="/shop/Registered/" method="POST">
+            {% csrf_token %}
+            <div class="form-header">REGISTRATION FORM</div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Username:</label>
+                    <input type="text" id="name" class="form-control" name="name" placeholder="Enter your username" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="Phone" class="form-label">Phone:</label>
+                    <input type="Text" id="Phone" class="form-control" name="Phone"  placeholder="Enter your phone" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="textarea" id="address" class="form-control" name="address" placeholder="Enter your Address" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="cpassword" class="form-label">Repeat Password:</label>
+                    <input type="password" id="cpassword" class="form-control" name="cpassword"  placeholder="Repeat your password" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="Country" class="form-label">Country:</label>
+                    <input type="text" id="Country" class="form-control" name ="Country" placeholder="Repeat your country" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <input type="text" id="repeatPassword" class="form-control"  name="gender" placeholder=" gender" required>
+                    {% comment %} <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required>
+                        <label class="form-check-label" for="female">Female</label>
+                    </div> {% endcomment %}
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the terms and conditions.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-register">Register Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
