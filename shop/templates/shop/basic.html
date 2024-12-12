@@ -45,6 +45,9 @@
                         <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/shop/Certifications/">Certifications</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/shop/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
@@ -67,6 +70,8 @@
             </div>
         </div>
     </nav>
+
+    
     
     {% block body %}
     {% endblock %}
@@ -87,14 +92,15 @@
                     <p><a href="{% url 'product' %}" class="text-white" style="text-decoration: none;">Product</a></p>
                     <p><a href="{% url 'about' %}" class="text-white" style="text-decoration: none;">About Us</a></p>
                     <p><a href="/shop/contact" class="text-white" style="text-decoration: none;">Contact</a></p>
+                    <p><a href="/shop/Certifications" class="text-white" style="text-decoration: none;">Certifications</a></p>
                 </div>
                 <!-- Customer Support -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold">Customer Support</h5>
-                    <p><a href="#" class="text-white" style="text-decoration: none;">FAQ</a></p>
-                    <p><a href="#" class="text-white" style="text-decoration: none;">Shipping Info</a></p>
-                    <p><a href="#" class="text-white" style="text-decoration: none;">Returns</a></p>
-                    <p><a href="/shop/tracker" class="text-white" style="text-decoration: none;">Track Order</a></p>
+                    <p><a href="/shop/Certifications" class="text-white" style="text-decoration: none;">FAQ</a></p>
+                    <p><a href="/shop/Registered/" class="text-white" style="text-decoration: none;">Register</a></p>
+                    <p><a href="/dhop/login/" class="text-white" style="text-decoration: none;">Login</a></p>
+                    {% comment %} <p><a href="/shop/tracker" class="text-white" style="text-decoration: none;">Track Order</a></p> {% endcomment %}
                 </div>
                 <!-- Social Media Links -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

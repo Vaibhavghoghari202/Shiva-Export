@@ -3,17 +3,36 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 {% block css %}
+{% load static %}
 <style>
     .contact-section {
         margin-top: 50px;
+        {% comment %} background: url('{% static "img/vegetables.jpg" %}') center/cover no-repeat; {% endcomment %}
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 80vh;
+        position: relative;
+    }
+
+    .contact-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .contact-section .container {
+        position: relative;
+        z-index: 2;
     }
 
     .contact-info {
-        background: #f8f9fa;
+        background: rgba(255, 255, 255, 0.9);
         padding: 30px;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -40,7 +59,7 @@
     }
 
     .form-container {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.9);
         padding: 30px;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -60,7 +79,8 @@
 {% endblock %}
 
 {% block body %}
-<div class="container contact-section">
+<div style="background: url('{% static "img/vegetables.jpg" %}') center/cover no-repeat;">  </div>
+<div class="container contact-section" >
     <div class="row w-100">
         <!-- Contact Info Section -->
         <div class="col-lg-5 d-flex flex-column justify-content-center">

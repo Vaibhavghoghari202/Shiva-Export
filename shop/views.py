@@ -11,8 +11,8 @@ from paytmchecksum import PaytmChecksum
 from django.http import HttpResponse
 # Create your views here.
 def index(request):    
-    allProds = []
-    products = Product.objects.all()  # Assuming this fetches all product data
+    allProds =  []
+    products = Product.objects.all()[:6]  # Assuming this fetches all product data
 
     n = len(products)
     nSlides = ceil(n / 3)  # Adjust slide calculation if necessary
@@ -24,7 +24,7 @@ def index(request):
 
 def searchMatch(query,item):
     '''return true only if query matches the item'''
-    if query in item.Desc.lower() or query in item.Product_name  or query in item.category.lower():
+    if query in item.desc.lower() or query in item.name  or query in item.category.lower():
         return True
     else:       
         return False 
@@ -87,8 +87,30 @@ def contact(request):
         thank =True
         return render(request,'shop/contact.html',{'thank':thank})
     return render(request,'shop/contact.html')
-def search(request):
-    return HttpResponse("this is the search")
+
+# def searchMatch(query,item):
+#     '''return true only if query matches the item'''
+#     if query in item.desc.lower() or query in item.product_name.lower() or query in item.category.lower():
+#         return True
+#     else:       
+#         return False 
+
+# def search(request):
+#     query = request.GET.get('search')
+#     allProds = []
+#     catprods=Product.objects.values('category','id')
+#     cats={item['category'] for item in catprods }
+#     for cat in cats:
+#         prodtemp=Product.objects.filter(category=cat)
+#         prod= [item for item in prodtemp if searchMatch (query,item )]
+#         n= len(prod)
+#         nsalides=n//4 + ceil((n/4)-(n//4))
+#         if len(prod)!= 0:
+#            allProds.append([prod,range(1,nsalides),nsalides])
+#     params = {'allProds':allProds,"msg":""}
+#     if len(allProds) == 0 or len(query)<4:
+#         params = {'msg':"Please make sure to enter relevant search Query"}
+#     return render(request, 'shop/search.html', params)
 
 def productView(request ,myid):
     #Fetch the  product using the Id 
@@ -148,3 +170,6 @@ def register(request):
 
     # If GET request, render the registration form
     return render(request, 'shop/Registered.html')
+
+def Certifications(request):
+    return render (request,'shop/Certifications.html')

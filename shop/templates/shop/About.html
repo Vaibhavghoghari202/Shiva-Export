@@ -2,10 +2,12 @@
 {% block title %}About Us{% endblock %}
 
 {% block css %}
+
+{% load static %}
 <style>
   .about-banner {
       height: 400px;
-      {% comment %} background: url('{% static "img/banner.jpg" %}') center/cover no-repeat; {% endcomment %}
+      background: url({% static 'img/logo.png' %}) center/cover no-repeat; 
       position: relative;
       color: white;
       text-align: center;
@@ -42,7 +44,7 @@
 {% endblock %}
 
 {% block body %}
-{% load static %}
+
 
 
 <!-- Company Overview Section -->
@@ -119,7 +121,17 @@
         </div>
     </div>
 </div>
-
+<!-- Who We Are Section -->
+<div class="container my-5">
+    <h2 class="section-title text-center">Who We Are?</h2>
+    <p class="text-center">We are a group of young and enthusiastic individuals who have come together for a single goal of being a global leader in food trading. We believe that India is known for our spices and food export is key to our country’s growth. Prioritizing in exporting Indian spices and other food products, we are also analysts and researchers who possess an up to date global food market database to help you.
+    </p>
+</div>
+   <!-- What We Do Section -->
+   <div class="container my-5">
+    <h2 class="section-title text-center">What We Do?</h2>
+    <p class="text-center">We provide customers with the service of spices export from India. But we also understand the demand for Indian food, which is why we also offer all kinds of food export from India. From helping you find the right buyers to packaging your food and sending it off, our complete services will ensure that you face absolutely no difficulties. Be it Europe, middle-east, the Americas, or wherever you want the food to be exported, we make sure that the job is done.</p>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   {% endblock %}

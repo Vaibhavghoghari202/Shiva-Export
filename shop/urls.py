@@ -11,6 +11,7 @@ urlpatterns = [
     path('handlerequest/',views.handlerequest,name='handleRequest'),
     path('login/',views.login,name='login'),
     path('Registered/',views.register,name='Registered'),
+    path('Certifications/',views.Certifications,name='Certifications'),
     # path('tracker/',views.tracker,name='tracker'),
     
 ]
